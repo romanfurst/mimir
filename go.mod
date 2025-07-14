@@ -18,7 +18,7 @@ require (
 	github.com/golang/snappy v1.0.0
 	github.com/google/gopacket v1.1.19
 	github.com/gorilla/mux v1.8.1
-	github.com/grafana/dskit v0.0.0-20250703125411-00229f5b510c
+	github.com/grafana/dskit v0.0.0-20250714112734-cbc2c366b525
 	github.com/grafana/e2e v0.1.2-0.20250428181430-708d63bcc673
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/influxdata/influxdb/v2 v2.7.12
@@ -31,9 +31,9 @@ require (
 	github.com/opentracing/opentracing-go v1.2.1-0.20220228012449-10b1cf09e00b // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/alertmanager v0.28.1
-	github.com/prometheus/client_golang v1.22.1-0.20250704064215-27d159a1744f
+	github.com/prometheus/client_golang v1.22.1-0.20250714112350-b3c02a766eb9
 	github.com/prometheus/client_model v0.6.2
-	github.com/prometheus/common v0.65.1-0.20250707075406-5013b8f064a8
+	github.com/prometheus/common v0.65.1-0.20250714095557-18a45b80c91d
 	github.com/prometheus/prometheus v1.99.0
 	github.com/segmentio/fasthash v1.0.3
 	github.com/sirupsen/logrus v1.9.3
@@ -346,18 +346,18 @@ require (
 )
 
 // https://github.com/grafana/mimir-prometheus/pull/892
-replace github.com/prometheus/prometheus => github.com/grafana/mimir-prometheus v1.8.2-0.20250707071849-5f7a229bd3e1
+replace github.com/prometheus/prometheus => github.com/grafana/mimir-prometheus v1.8.2-0.20250714104201-83bfd5b90a8a
 
 // https://github.com/grafana/prometheus-alertmanager/pull/118
 replace github.com/prometheus/alertmanager => github.com/juliusmh/alertmanager v0.26.1-0.20250624114102-96969065f8d2
 
 // https://github.com/prometheus/client_golang/pull/1822
-replace github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.22.1-0.20250707083639-bdb6b976b8d7
+replace github.com/prometheus/client_golang => github.com/prometheus/client_golang v1.22.1-0.20250714111005-1b8336354485
 
 // https://github.com/open-telemetry/opentelemetry-go/pull/6927
 replace go.opentelemetry.io/otel => github.com/aknuds1/opentelemetry-go v0.0.0-20250707083224-5bf4592583ac
 
-replace go.opentelemetry.io/otel/exporters/prometheus => github.com/aknuds1/opentelemetry-go/exporters/prometheus v0.0.0-20250707083224-5bf4592583ac
+replace go.opentelemetry.io/otel/exporters/prometheus => github.com/aknuds1/opentelemetry-go/exporters/prometheus v0.0.0-20250714105753-6d10dabef4d5
 
 // Replace memberlist with our fork which includes some fixes that haven't been
 // merged upstream yet:
@@ -389,3 +389,7 @@ replace github.com/prometheus/otlptranslator => github.com/grafana/mimir-otlptra
 
 // Replace objstore with a fork containing https://github.com/thanos-io/objstore/pull/181.
 replace github.com/thanos-io/objstore => github.com/charleskorn/objstore v0.0.0-20250527065533-21d4c0c463eb
+
+replace github.com/prometheus/common => github.com/prometheus/common v0.65.1-0.20250714095557-18a45b80c91d
+
+replace go.opentelemetry.io/contrib/bridges/prometheus => github.com/aknuds1/opentelemetry-go-contrib/bridges/prometheus v0.0.0-20250714111156-1d40a1d868ea
