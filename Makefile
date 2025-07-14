@@ -156,18 +156,7 @@ push-multiarch-%/$(UPTODATE):
 		--build-arg=revision=$(GIT_REVISION) \
 		--build-arg=goproxyValue=$(GOPROXY_VALUE) \
 		--build-arg=USE_BINARY_SUFFIX=true \
-		-t $(IMAGE_PREFIX)$(shell basename $(DIR)):$(IMAGE_TAG) $(DIR)/
-
-	# Build Dockerfile.continuous-test
-	if [ -f $(DIR)/Dockerfile.continuous-test ]; then \
-		$(SUDO) docker buildx build -f $(DIR)/Dockerfile.continuous-test \
-			-o $(PUSH_MULTIARCH_TARGET_CONTINUOUS_TEST) \
-			--platform linux/amd64,linux/arm64 \
-			--build-arg=revision=$(GIT_REVISION) \
-			--build-arg=goproxyValue=$(GOPROXY_VALUE) \
-			--build-arg=USE_BINARY_SUFFIX=true \
-			-t $(IMAGE_PREFIX)$(shell basename $(DIR))-continuous-test:$(IMAGE_TAG) $(DIR)/; \
-	fi;
+		-t codenow-codenow-releases.jfrog.io/codenow/grafana/mimir:2.16.1 $(DIR)/
 
 push-multiarch-mimir: ## Push mimir docker image.
 push-multiarch-mimir: push-multiarch-cmd/mimir/.uptodate

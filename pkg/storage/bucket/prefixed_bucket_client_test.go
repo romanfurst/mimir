@@ -14,7 +14,7 @@ import (
 )
 
 func TestPrefixedBucketClient(t *testing.T) {
-	const prefix = "p"
+	const prefix = "p1/p2"
 	mockBucket := &ClientMock{}
 	client := NewPrefixedBucketClient(mockBucket, prefix)
 
